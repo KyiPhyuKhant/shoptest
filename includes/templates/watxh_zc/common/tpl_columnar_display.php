@@ -107,11 +107,12 @@
 	
 	global $db;
 	$category_id = isset($_GET['cPath']) ? $_GET['cPath'] : 0;
-	$products_query = "SELECT p.* 
+	$products_query = "SELECT p.products_id, p.products_price, p.products_image, p.products_date_added, pd.products_name
 	FROM products p
 	JOIN products_to_categories ptc 
 	ON p.products_id = ptc.products_id
-	WHERE categories_id = " . $category_id . "
+	LEFT JOIN products_description pd ON p.products_id = pd.products_id
+	WHERE ptc.categories_id = " . (int)$category_id . "
 	AND p.products_status = 1";
 
 	$products = $db->Execute($products_query);
@@ -124,6 +125,7 @@
 				'products_name' => $products->fields['products_name'],
 				'products_price' => $products->fields['products_price'],
 				'products_image' => $products->fields['products_image'],
+				'products_date_added' => $products->fields['products_date_added'],
 			);
 			$list_box_contents[] = $product;
 			$products->MoveNext();
@@ -153,7 +155,7 @@
 				// Check for sale and new product status
 				$prod_id = $column['products_id'];
 				$is_on_sale = (zen_get_products_special_price($prod_id, false) != false) && (zen_get_products_special_price($prod_id, false) != zen_get_products_base_price($prod_id));
-				$creation_date = strtotime($column['products_date_added']);
+				$creation_date = isset($column['products_date_added']) && !empty($column['products_date_added']) ? strtotime($column['products_date_added']) : time();
 				$is_new_product = ($creation_date > (time() - 604800)); // 604800 seconds = 7 days
 				
 				$query = "SELECT 

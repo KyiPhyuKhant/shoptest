@@ -15,7 +15,6 @@
 <div class="centerColumn checkout_pages container" id="checkoutConfirmDefault">
 
 <h1 id="checkoutConfirmDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
-<!-- <p class="checkoutConfirmDefaultText"><?php echo ORDER_COMPLETED_TEXT; ?></p> -->
 
 <?php if ($messageStack->size('redemptions') > 0) echo $messageStack->output('redemptions'); ?>
 <?php if ($messageStack->size('checkout_confirmation') > 0) echo $messageStack->output('checkout_confirmation'); ?>

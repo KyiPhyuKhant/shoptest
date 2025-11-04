@@ -18,6 +18,9 @@ $list_of_products = '';
 $sql = '';
 $display_limit = '';
 
+// Initialize manufacturers_id from GET parameter  
+$manufacturers_id = isset($_GET['manufacturers_id']) ? (int)$_GET['manufacturers_id'] : 0;
+
 if ((($manufacturers_id > 0 && empty($_GET['filter_id'])) || !empty($_GET['music_genre_id']) || !empty($_GET['record_company_id'])) || empty($new_products_category_id)) {
     $sql = "SELECT p.products_id, p.products_image, pd.products_name, p.master_categories_id
             FROM " . TABLE_PRODUCTS . " p

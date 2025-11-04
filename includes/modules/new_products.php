@@ -16,6 +16,9 @@ $categories_products_id_list = [];
 $list_of_products = '';
 $new_products_query = '';
 
+// Initialize manufacturers_id from GET parameter  
+$manufacturers_id = isset($_GET['manufacturers_id']) ? (int)$_GET['manufacturers_id'] : 0;
+
 $display_limit = zen_get_new_date_range();
 
 if ((($manufacturers_id > 0 && empty($_GET['filter_id'])) || !empty($_GET['music_genre_id']) || !empty($_GET['record_company_id'])) || empty($new_products_category_id)) {

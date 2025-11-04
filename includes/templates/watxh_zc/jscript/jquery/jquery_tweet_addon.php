@@ -4,7 +4,7 @@ jQuery(function(){
 		avatar_size: 0,
 		count: 1,
 		modpath: 'twitter/',
-		username: "<?php echo TABLEAU_TWITTER_HANDLE; ?>",
+		username: "<?php echo defined('TABLEAU_TWITTER_HANDLE') ? constant('TABLEAU_TWITTER_HANDLE') : ''; ?>",
 		loading_text: "searching twitter...",
 		refresh_interval: 60,
 	});

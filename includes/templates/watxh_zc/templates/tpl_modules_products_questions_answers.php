@@ -35,7 +35,7 @@ if ( PRODUCTS_QUESTIONS_ANSWERS_ENABLED == 'true' ) {
 <?php } // endif; ?>
 <!-- eof products questions answers listing -->
 
-<?php if (PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS == 'true' || !empty($_SESSION['customer_id'])) { ?>
+<?php if ((defined('PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS') && PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS == 'true') || !empty($_SESSION['customer_id'])) { ?>
 
 	<!-- bof Ask question form <form> -->
 	<?php echo zen_draw_form('ask_question', '', 'post', 'class="ask-question nmx-form nmx-cf" id="ask-question-form"'); ?>
@@ -60,7 +60,7 @@ if ( PRODUCTS_QUESTIONS_ANSWERS_ENABLED == 'true' ) {
 			<textarea name="question" placeholder="<?php echo LABEL_YOUR_QUESTION_PLACEHOLDER; ?>" id="ask-question" ></textarea>
 		</div>
 
-		<?php if ( PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS == 'true' && PRODUCTS_QUESTIONS_ANSWERS_GOOGLE_RECAPTCHA_SITE_KEY != '' ) { ?>
+		<?php if ((defined('PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS') && PRODUCTS_QUESTIONS_ANSWERS_ALLOW_QUESTS_ASKING_QUESTIONS == 'true') && (defined('PRODUCTS_QUESTIONS_ANSWERS_GOOGLE_RECAPTCHA_SITE_KEY') && PRODUCTS_QUESTIONS_ANSWERS_GOOGLE_RECAPTCHA_SITE_KEY != '')) { ?>
 			<div class="nmx-form-group">
 				<div class="g-recaptcha" data-sitekey="<?php echo PRODUCTS_QUESTIONS_ANSWERS_GOOGLE_RECAPTCHA_SITE_KEY; ?>"></div>
 			</div>

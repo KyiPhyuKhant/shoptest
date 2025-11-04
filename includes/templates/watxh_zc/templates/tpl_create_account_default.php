@@ -80,35 +80,35 @@
 <!-- <div class="no-split-mode"> -->
 <!-- <div id="login">
    <fieldset>
-    <h2><?php echo HEADING_RETURNING_CUSTOMER; ?></h2>
-    <?php echo zen_draw_form('login', zen_href_link(FILENAME_LOGIN, 'action=process', 'SSL')); ?>
-    <label class="inputLabel" for="login-email-address"><?php echo ENTRY_EMAIL_ADDRESS; ?></label>
-    <?php echo zen_draw_input_field('email_address', '', 'size="18" id="login-email-address"'); ?>
+    <h2><?php //echo HEADING_RETURNING_CUSTOMER; ?></h2>
+    <?php //echo zen_draw_form('login', zen_href_link(FILENAME_LOGIN, 'action=process', 'SSL')); ?>
+    <label class="inputLabel" for="login-email-address"><?php //echo ENTRY_EMAIL_ADDRESS; ?></label>
+    <?php //echo zen_draw_input_field('email_address', '', 'size="18" id="login-email-address"'); ?>
     <br class="clearBoth" />
 
-    <label class="inputLabel" for="login-password"><?php echo ENTRY_PASSWORD; ?></label>
-    <?php echo zen_draw_password_field('password', '', 'size="18" id="login-password"'); ?>
-    <?php echo zen_draw_hidden_field('securityToken', $_SESSION['securityToken']);  ?>
+    <label class="inputLabel" for="login-password"><?php //echo ENTRY_PASSWORD; ?></label>
+    <?php //echo zen_draw_password_field('password', '', 'size="18" id="login-password"'); ?>
+    <?php // echo zen_draw_hidden_field('securityToken', $_SESSION['securityToken']);  ?>
     <br class="clearBoth" />
 
-    <div class="buttonRow back"><?php echo zen_image_submit(BUTTON_IMAGE_LOGIN, BUTTON_LOGIN_ALT);   ?></div>
-    <div class="buttonRow back important"><?php echo '<a href="' . zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL') . '">' . TEXT_PASSWORD_FORGOTTEN . '</a>'; ?></div>
+    <div class="buttonRow back"><?php //echo zen_image_submit(BUTTON_IMAGE_LOGIN, BUTTON_LOGIN_ALT);   ?></div>
+    <div class="buttonRow back important"><?php //echo '<a href="' . zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL') . '">' . TEXT_PASSWORD_FORGOTTEN . '</a>'; ?></div>
 
     </form>
    </fieldset>
   </div> -->
 
 <!-- <div class="login">
- <form class="login-form" action="<?php echo zen_href_link(FILENAME_LOGIN, 'action=process', 'SSL'); ?>" method="post">
+ <form class="login-form" action="<?php // echo zen_href_link(FILENAME_LOGIN, 'action=process', 'SSL'); ?>" method="post">
   <h3>Login</h3>
   <input type="email" name="email_address" placeholder="Email Address" id="login-email-address" required />
   <input type="password" name="password" placeholder="Password" id="login-password" required />
 
-  <?php echo zen_draw_hidden_field('securityToken', $_SESSION['securityToken']);  ?>
-  <p class="login-form--forgot_password"> <a href="<?php echo zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL'); ?>">Forgot your password</a></p>
+  <?php //echo zen_draw_hidden_field('securityToken', $_SESSION['securityToken']);  ?>
+  <p class="login-form--forgot_password"> <a href="<?php //echo zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL'); ?>">Forgot your password</a></p>
 
   <button>Login</button>
-  <p>Don't have an Account? <a href="<?php echo zen_href_link('register'); ?>">Create One</a></p>
+  <p>Don't have an Account? <a href="<?php //echo zen_href_link('register'); ?>">Create One</a></p>
 
  </form>
 </div> -->

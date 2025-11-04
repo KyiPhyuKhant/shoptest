@@ -38,7 +38,6 @@ $totalReviews = (int)$countR->fields['total_reviews'];
     if ($nmx_disk_cache->cacheStart('tpl_product_info_display', '', true, true)) {
     ?>
     
-  <?php //} ?>
   <div class="product-single">
   <div class="row">
   <div class="product-view">
@@ -805,3 +804,8 @@ $totalReviews = (int)$countR->fields['total_reviews'];
                                       </form>
                                       </div>
                                       </div>
+
+<?php
+    } // End of cache block
+    $nmx_disk_cache->cacheEnd();
+?>

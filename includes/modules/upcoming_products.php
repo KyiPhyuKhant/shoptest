@@ -17,6 +17,9 @@ $categories_products_id_list = [];
 $list_of_products = '';
 $sql = '';
 
+// Initialize manufacturers_id from GET parameter  
+$manufacturers_id = isset($_GET['manufacturers_id']) ? (int)$_GET['manufacturers_id'] : 0;
+
 $display_limit = zen_get_upcoming_date_range();
 
 $limit_clause = "  ORDER BY " . (EXPECTED_PRODUCTS_FIELD == 'date_expected' ? 'date_expected' : 'products_name') . " " . (EXPECTED_PRODUCTS_SORT == 'asc' ? 'ASC' : 'DESC') . "
