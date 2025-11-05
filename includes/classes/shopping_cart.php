@@ -1940,6 +1940,11 @@ class shoppingCart extends base
                 }
             }
 
+            // Ensure cart_quantity is set with a default value
+            if (!isset($_POST['cart_quantity'])) {
+                $_POST['cart_quantity'] = 1; // Default to 1 if not specified
+            }
+
             if (!is_numeric($_POST['cart_quantity']) || $_POST['cart_quantity'] <= 0) {
                 // adjust quantity when not a value
                 // If use an extra_cart_actions file to prevent processing by this function,
